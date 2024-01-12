@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App"> 
       <Row title=" NETFLEX ORIGINAL" fetchUrl={request.fetchNetflexOriginals}/>
       <Row title="Trending Now" fetchUrl={request.fetchTrending} />
 

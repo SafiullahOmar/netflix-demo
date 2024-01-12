@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from './axios';
 import { useState } from 'react';
-
+import Rowcss from './Row.css';
 const baseBaseUrl="https://image.tmdb.org/t/p/original";
 
 function Row({title,fetchUrl }) {
@@ -31,10 +31,10 @@ function Row({title,fetchUrl }) {
         <div className='row'>
             <h2>{title}</h2>
             <div className='row_posters'>
-        
+                       
                 {movies.map(movie => (
                     
-                    <img key={movie.id} src={`${baseBaseUrl}${movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
+                    <img className='row_poster' key={movie.id} src={`${baseBaseUrl}${movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
                 ))}
             </div>
         </div>
