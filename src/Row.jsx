@@ -9,7 +9,6 @@ function Row({title,fetchUrl }) {
 
     useEffect(()=>{
         console.log(axios);
-
         async function fetchData() {
             try {
                 const request = await axios.get(fetchUrl);
@@ -34,7 +33,7 @@ function Row({title,fetchUrl }) {
                        
                 {movies.map(movie => (
                     
-                    <img className='row_poster' key={movie.id} src={`${baseBaseUrl}${movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
+                    <img key={movie.id} className='row_poster'  src={`${baseBaseUrl}${movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
                 ))}
             </div>
         </div>
