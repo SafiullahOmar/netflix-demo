@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Rowcss from './Row.css';
 const baseBaseUrl="https://image.tmdb.org/t/p/original";
 
-function Row({title,fetchUrl }) {
+function Row({title,fetchUrl,isLargeRow }) {
     const [movies,setMovies]=useState([]);
 
     useEffect(()=>{
@@ -29,11 +29,11 @@ function Row({title,fetchUrl }) {
     
         <div className='row'>
             <h2>{title}</h2>
-            <div className='row_posters'>
+            <div className={`row_posters ${ isLargeRow && "row_posterLarge"} `}>
                        
                 {movies.map(movie => (
                     
-                    <img key={movie.id} className='row_poster'  src={`${baseBaseUrl}${movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
+                    <img key={movie.id} className='row_poster'  src={`${baseBaseUrl}${ isLargeRow ? movie.backdrop_path:movie.backdrop_path}`} alt={`${baseBaseUrl}${movie.backdrop_path}`} />
                 ))}
             </div>
         </div>
