@@ -5,6 +5,7 @@ import Row from './Row';
 import { useState } from 'react';
 import request from './requests.js';
 import Banner from './Banner.jsx';
+import Nav from './Nav.jsx';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className="App"> 
+    <Nav/>
     <Banner/>
 
       <Row title=" NETFLEX ORIGINAL" fetchUrl={request.fetchNetflexOriginals} isLargeRow/>
